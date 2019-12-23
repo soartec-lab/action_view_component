@@ -1,7 +1,10 @@
 class UserComponent < ActionView::Component::Base
-  attr_reader :name
+  attr_reader :name, :style
 
-  def initialize(name:)
+  validates :style, presence: true
+
+  def initialize(name:, style:)
     @name = name
+    @style = style
   end
 end
